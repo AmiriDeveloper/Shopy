@@ -19,7 +19,7 @@ class SearchPage extends StatelessWidget {
             child: TextField(
               textAlign: TextAlign.center,
               decoration: InputDecoration(
-                  suffixIcon: Icon(Icons.search_sharp),
+                  suffixIcon: const Icon(Icons.search_sharp),
                   label: const Text('Search'),
                   fillColor: Colors.grey[300],
                   filled: true,

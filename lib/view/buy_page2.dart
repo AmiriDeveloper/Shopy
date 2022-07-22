@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shopy/main.dart';
-import 'package:shopy/shopping_list.dart';
+import 'package:shopy/model/shopping_list.dart';
 
 void main() {
   runApp(const BuyPage2());
@@ -158,7 +158,7 @@ class _NewState extends State<New> {
                               side: const BorderSide(
                                   color: Color.fromARGB(60, 0, 0, 0),
                                   width: 1)),
-                          child: Container(
+                          child: SizedBox(
                             height: 90,
                             width: 90,
                             child: Column(
@@ -177,7 +177,7 @@ class _NewState extends State<New> {
                               side: const BorderSide(
                                   color: Color.fromARGB(60, 0, 0, 0),
                                   width: 1)),
-                          child: Container(
+                          child: SizedBox(
                             height: 90,
                             width: 90,
                             child: Column(
@@ -196,7 +196,7 @@ class _NewState extends State<New> {
                               side: const BorderSide(
                                   color: Color.fromARGB(60, 0, 0, 0),
                                   width: 1)),
-                          child: Container(
+                          child: SizedBox(
                             height: 90,
                             width: 90,
                             child: Column(

@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shopy/main.dart';
-import 'package:shopy/my_stables.dart';
+import 'package:shopy/model/my_stables.dart';
+
+import '../model/my_stables.dart';
 
 class SellingPage extends StatelessWidget {
+  const SellingPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -33,7 +37,7 @@ class SellingPage extends StatelessWidget {
                             IconButton(
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
-                                    builder: ((context) => ShopyApp())));
+                                    builder: ((context) => const ShopyApp())));
                               },
                               icon: const Icon(
                                 CupertinoIcons.back,
