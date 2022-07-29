@@ -1,35 +1,12 @@
-// ignore_for_file: sized_box_for_whitespace
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shopy/model/internet_data.dart';
-import 'package:shopy/main.dart';
-
-void main() {
-  runApp(const BeuyPage());
-}
 
 class BeuyPage extends StatelessWidget {
-  const BeuyPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(debugShowCheckedModeBanner: false, home: New());
-  }
-}
-
-class New extends StatefulWidget {
-  const New({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  State<New> createState() => _NewState();
-}
-
-class _NewState extends State<New> {
-  int _pickedIndex = 0;
+  BeuyPage({Key? key, required this.product}) : super(key: key);
+  final Shop product;
   double imageSize = 55;
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -53,7 +30,7 @@ class _NewState extends State<New> {
                         children: [
                           const Icon(Icons.chevron_right_sharp),
                           Text(
-                            shoppingList[_pickedIndex].model,
+                            product.model,
                             style: const TextStyle(
                                 backgroundColor: Colors.cyan, fontSize: 20),
                           ),
@@ -73,14 +50,13 @@ class _NewState extends State<New> {
                     Container(
                       height: size.height / 1.8,
                       width: double.infinity,
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                           color: Colors.white,
                           image: DecorationImage(
-                            image: AssetImage("images/class.png"),
-                            /*  NetworkImage(shoppingList[_pickedIndex].imageUrl),*/
-                            //    fit: BoxFit.cover
-                          ),
-                          borderRadius: BorderRadius.only(
+                              image: //AssetImage("images/class.png"),
+                                  NetworkImage(product.imageUrl),
+                              fit: BoxFit.cover),
+                          borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(30),
                             bottomRight: Radius.circular(30),
                           )),
@@ -98,65 +74,13 @@ class _NewState extends State<New> {
                         decoration: const BoxDecoration(
                             shape: BoxShape.circle, color: Colors.white),
                         child: IconButton(
-                          onPressed: (() => Navigator.of(context).push(
-                              MaterialPageRoute(
-                                  builder: (context) => const MyApp()))),
+                          onPressed: (() => Navigator.pop(context)),
                           icon: const Icon(
                             CupertinoIcons.arrow_left,
                             color: Colors.black,
                           ),
                         ),
                       ),
-                    ),
-                  ),
-                  Positioned(
-                    right: 8,
-                    top: 20,
-                    child: SizedBox(
-                      height: size.height / 2,
-                      width: 90,
-                      //--------------  List View  builder -----------------//
-                      child: ListView.builder(
-                          scrollDirection: Axis.vertical,
-                          itemCount: shoppingList.length,
-                          itemBuilder: ((context, index) {
-                            return Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        _pickedIndex = index;
-                                      });
-                                    },
-                                    child: AnimatedContainer(
-                                      height: _pickedIndex == index
-                                          ? imageSize + 15
-                                          : imageSize,
-                                      width: _pickedIndex == index
-                                          ? imageSize + 15
-                                          : imageSize,
-                                      duration:
-                                          const Duration(milliseconds: 100),
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: Colors.white, width: 2),
-                                          borderRadius:
-                                              BorderRadius.circular(16),
-                                          image: const DecorationImage(
-                                            image:
-                                                AssetImage("images/class.png"),
-                                            /* NetworkImage(
-                                            shoppingList[index].imageUrl),*/
-                                            //  fit: BoxFit.cover,
-                                          )),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            );
-                          })),
                     ),
                   ),
                 ]),
@@ -177,7 +101,7 @@ class _NewState extends State<New> {
                                   side: const BorderSide(
                                       color: Color.fromARGB(60, 0, 0, 0),
                                       width: 1)),
-                              child: Container(
+                              child: SizedBox(
                                 height: 90,
                                 width: 90,
                                 child: Column(
@@ -185,7 +109,7 @@ class _NewState extends State<New> {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     const Text("Memory"),
-                                    Text(shoppingList[_pickedIndex].memory),
+                                    Text(product.memory),
                                   ],
                                 ),
                               )),
@@ -197,7 +121,7 @@ class _NewState extends State<New> {
                                   side: const BorderSide(
                                       color: Color.fromARGB(60, 0, 0, 0),
                                       width: 1)),
-                              child: Container(
+                              child: SizedBox(
                                 height: 90,
                                 width: 90,
                                 child: Column(
@@ -205,7 +129,7 @@ class _NewState extends State<New> {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     const Text("Ram"),
-                                    Text(shoppingList[_pickedIndex].ram),
+                                    Text(product.ram),
                                   ],
                                 ),
                               )),
@@ -217,7 +141,7 @@ class _NewState extends State<New> {
                                   side: const BorderSide(
                                       color: Color.fromARGB(60, 0, 0, 0),
                                       width: 1)),
-                              child: Container(
+                              child: SizedBox(
                                 height: 90,
                                 width: 90,
                                 child: Column(
@@ -225,7 +149,7 @@ class _NewState extends State<New> {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     const Text("Pixel"),
-                                    Text(shoppingList[_pickedIndex].pixel),
+                                    Text(product.pixel),
                                   ],
                                 ),
                               )),
@@ -254,7 +178,7 @@ class _NewState extends State<New> {
                                   height: 12,
                                 ),
                                 Text(
-                                  "${shoppingList[_pickedIndex].price} \$",
+                                  "${product.price} \$",
                                   style: const TextStyle(
                                     fontSize: 35,
                                   ),
