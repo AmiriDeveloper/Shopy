@@ -8,26 +8,34 @@ class SearchPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 237, 237, 237),
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        toolbarHeight: 100,
-        elevation: 10,
-        title: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SizedBox(
-            width: double.infinity,
-            height: 70,
-            child: TextField(
-              textAlign: TextAlign.center,
-              decoration: InputDecoration(
-                  suffixIcon: const Icon(Icons.search_sharp),
-                  label: const Text('Search'),
-                  fillColor: Colors.grey[300],
-                  filled: true,
-                  hintText: "Search",
-                  border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(20))),
-            ),
+          title: Row(children: [
+            IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(Icons.arrow_back)),
+            Expanded(child: Container()),
+            // IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back))
+          ]),
+          backgroundColor: Colors.deepPurpleAccent,
+          elevation: 0),
+      body: Container(
+        color: Colors.deepPurpleAccent,
+        height: 50,
+        width: double.infinity,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 8.0),
+          child: TextField(
+            textAlign: TextAlign.center,
+            decoration: InputDecoration(
+                suffixIcon: const Icon(Icons.search_sharp),
+                label: const Text('Search'),
+                fillColor: Colors.grey[300],
+                filled: true,
+                hintText: "Search",
+                border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(20))),
           ),
         ),
       ),
