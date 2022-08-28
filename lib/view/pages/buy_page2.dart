@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shopy/main.dart';
-import 'package:shopy/model/shopping_list.dart';
+import 'package:shopy/model/internet_data.dart';
 
 void main() {
   runApp(const BuyPage2());
@@ -50,7 +50,7 @@ class _NewState extends State<New> {
                     children: [
                       const Icon(Icons.chevron_right_sharp),
                       Text(
-                        shoppingList2[_pickedIndex].model,
+                        shoppingList[_pickedIndex].model,
                         style: const TextStyle(
                             backgroundColor: Colors.cyan, fontSize: 20),
                       ),
@@ -64,7 +64,7 @@ class _NewState extends State<New> {
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         image:
-                            NetworkImage(shoppingList2[_pickedIndex].imageUr),
+                            NetworkImage(shoppingList[_pickedIndex].imageUrl),
                         fit: BoxFit.cover),
                     borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(30),
@@ -103,7 +103,7 @@ class _NewState extends State<New> {
                   //--------------  List View  builder -----------------//
                   child: ListView.builder(
                       scrollDirection: Axis.vertical,
-                      itemCount: shoppingList2.length,
+                      itemCount: shoppingList.length,
                       itemBuilder: ((context, index) {
                         return Column(
                           children: [
@@ -129,7 +129,7 @@ class _NewState extends State<New> {
                                       borderRadius: BorderRadius.circular(16),
                                       image: DecorationImage(
                                         image: NetworkImage(
-                                            shoppingList2[index].imageUr),
+                                            shoppingList[index].imageUrl),
                                         fit: BoxFit.cover,
                                       )),
                                 ),
@@ -165,7 +165,7 @@ class _NewState extends State<New> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 const Text("Memory"),
-                                Text(shoppingList2[_pickedIndex].memory),
+                                Text(shoppingList[_pickedIndex].memory),
                               ],
                             ),
                           )),
@@ -184,7 +184,7 @@ class _NewState extends State<New> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 const Text("Ram"),
-                                Text(shoppingList2[_pickedIndex].ram),
+                                Text(shoppingList[_pickedIndex].ram),
                               ],
                             ),
                           )),
@@ -203,7 +203,7 @@ class _NewState extends State<New> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 const Text("Pixel"),
-                                Text(shoppingList2[_pickedIndex].pixel),
+                                Text(shoppingList[_pickedIndex].pixel),
                               ],
                             ),
                           )),
@@ -232,7 +232,7 @@ class _NewState extends State<New> {
                               height: 12,
                             ),
                             Text(
-                              "${shoppingList2[_pickedIndex].pric} \$",
+                              "${shoppingList[_pickedIndex].price} \$",
                               style: const TextStyle(
                                 fontSize: 35,
                               ),

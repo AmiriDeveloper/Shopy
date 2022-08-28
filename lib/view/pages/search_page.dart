@@ -15,7 +15,6 @@ class SearchPage extends StatelessWidget {
                 },
                 icon: const Icon(Icons.arrow_back)),
             Expanded(child: Container()),
-            // IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back))
           ]),
           backgroundColor: Colors.deepPurpleAccent,
           elevation: 0),

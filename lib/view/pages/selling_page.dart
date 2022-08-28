@@ -50,6 +50,7 @@ class BodyShow extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Container(
                   decoration: const BoxDecoration(
+                      color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(16))),
                 );
               }),

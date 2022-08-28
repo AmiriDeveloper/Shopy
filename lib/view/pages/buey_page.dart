@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shopy/model/internet_data.dart';
 
-class BeuyPage extends StatelessWidget {
-  BeuyPage({Key? key, required this.product}) : super(key: key);
+class BuyPage extends StatelessWidget {
+  BuyPage({Key? key, required this.product}) : super(key: key);
   final Shop product;
   double imageSize = 55;
 
@@ -53,8 +53,7 @@ class BeuyPage extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Colors.white,
                           image: DecorationImage(
-                              image: //AssetImage("images/class.png"),
-                                  NetworkImage(product.imageUrl),
+                              image: NetworkImage(product.imageUrl),
                               fit: BoxFit.cover),
                           borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(30),
@@ -193,9 +192,85 @@ class BeuyPage extends StatelessWidget {
                               height: 55,
                               decoration: const BoxDecoration(
                                   shape: BoxShape.circle, color: Colors.white),
-                              child: const Icon(
-                                CupertinoIcons.right_chevron,
-                                color: Colors.black,
+                              child: IconButton(
+                                onPressed: () {
+                                  showModalBottomSheet(
+                                      //   isScrollControlled: true,
+                                      shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.vertical(
+                                              top: Radius.circular(15))),
+                                      context: context,
+                                      builder: (context) => Row(
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: SizedBox(
+                                                  height: 300,
+                                                  width: 150,
+                                                  child: (
+                                                      //bug ------------
+                                                      Image.network(
+                                                    product.imageUrl,
+                                                    fit: BoxFit.fitHeight,
+                                                  )),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: SizedBox(
+                                                  height: 300,
+                                                  width: 170,
+                                                  child: Column(
+                                                    children: [
+                                                      const Spacer(),
+                                                      Text(
+                                                        product.model,
+                                                        style: const TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontSize: 20),
+                                                      ),
+                                                      Text(
+                                                        product.price,
+                                                        style: const TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontSize: 20),
+                                                      ),
+                                                      const Spacer(),
+                                                      const Text(
+                                                        "Samsung s22",
+                                                        style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontSize: 20),
+                                                      ),
+                                                      const Spacer(),
+                                                      const Text(
+                                                        "Samsung s22",
+                                                        style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontSize: 20),
+                                                      ),
+                                                      const Spacer(),
+                                                      ElevatedButton(
+                                                          onPressed: () {},
+                                                          child: const Text(
+                                                              "Buy Now"))
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ));
+                                },
+                                icon: const Icon(
+                                  CupertinoIcons.right_chevron,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
                           )

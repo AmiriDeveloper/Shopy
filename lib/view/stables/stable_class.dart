@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../model/internet_data.dart';
-import '../model/shopping_list.dart';
-import '../view/selling_page.dart';
+import '../../model/internet_data.dart';
+import '../../model/shopping_list.dart';
+import '../pages/selling_page.dart';
 
 class DigiKalaCard2 extends StatelessWidget {
   const DigiKalaCard2({
@@ -141,6 +141,7 @@ class ListViewBuilder extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class CameraPhoneAirpodList extends StatelessWidget {
   CameraPhoneAirpodList({
     Key? key,
@@ -220,54 +221,3 @@ class StiableContainer extends StatelessWidget {
     );
   }
 }
- 
-  /*Positioned(
-                    right: 8,
-                    top: 20,
-                    child: SizedBox(
-                      height: size.height / 2,
-                      width: 90,
-                      //--------------  List View  builder -----------------//
-                      child: ListView.builder(
-                          scrollDirection: Axis.vertical,
-                          itemCount: shoppingList.length,
-                          itemBuilder: ((context, index) {
-                            return Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        _pickedIndex = index;
-                                      });
-                                    },
-                                    child: AnimatedContainer(
-                                      height: _pickedIndex == index
-                                          ? imageSize + 15
-                                          : imageSize,
-                                      width: _pickedIndex == index
-                                          ? imageSize + 15
-                                          : imageSize,
-                                      duration:
-                                          const Duration(milliseconds: 100),
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: Colors.white, width: 2),
-                                          borderRadius:
-                                              BorderRadius.circular(16),
-                                          image: DecorationImage(
-                                            image:
-                                                //  AssetImage("images/class.png"),
-                                                NetworkImage(shoppingList[index]
-                                                    .imageUrl),
-                                            fit: BoxFit.cover,
-                                          )),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            );
-                          })),
-                    ),
-                  ),*/
