@@ -13,7 +13,7 @@ class Shop3 {
   });
 }
 
-List<Shop3> ShopingLiat3 = [
+List<Shop3> shopingLiat3 = [
   Shop3(
     id: 1,
     imageUrl:

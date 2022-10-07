@@ -21,7 +21,7 @@ class DigiKalaCard2 extends StatelessWidget {
       child: SizedBox(
         height: size.height / 1.8,
         width: double.maxFinite,
-        child: ListView.builder(
+        child: PageView.builder(
             itemCount: digiList2.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: ((context, index) {
@@ -140,7 +140,6 @@ class ListViewBuilder extends StatelessWidget {
     );
   }
 }
-
 // ignore: must_be_immutable
 class CameraPhoneAirpodList extends StatelessWidget {
   CameraPhoneAirpodList({

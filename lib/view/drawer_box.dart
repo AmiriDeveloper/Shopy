@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopy/view/stables/Stable_classes.dart';
 
-import '../main.dart';
-
 class BoxOfDrawer extends StatelessWidget {
   const BoxOfDrawer({
     Key? key,

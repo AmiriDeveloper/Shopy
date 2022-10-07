@@ -3,13 +3,12 @@ import 'package:shopy/model/internet_data.dart';
 import 'package:shopy/view/baince.dart';
 import 'package:shopy/view/pages/buey_page.dart';
 import 'package:shopy/view/drawer_box.dart';
+import 'package:shopy/view/pages/favorit_page.dart';
 import 'package:shopy/view/splash_screen.dart';
 import 'package:shopy/view/stables/Stable_classes.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
 import 'view/stables/stable_class.dart';
 import 'view/stables/my_stables.dart';
-
-import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,12 +22,11 @@ class MyApp extends StatelessWidget {
     // var text = Theme.of(context).textTheme;
 
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: SplashScren() //ShopyApp(),
+        debugShowCheckedModeBanner: false,
+        home: FavoriPage() // SplashScren() //ShopyApp(),
         );
   }
 }
-
-final GlobalKey<ScaffoldState> _key = GlobalKey();
 
 class ShopyApp extends StatelessWidget {
   const ShopyApp({Key? key}) : super(key: key);
@@ -49,7 +47,10 @@ class ShopyApp extends StatelessWidget {
             children: [
               BoxOfAppBar(size: size),
               const TitleApp(),
-              const Baince(),
+              SizedBox(
+                  height: size.height / 3,
+                  width: double.infinity,
+                  child: const Baince()),
               const SizedBox(height: 8),
               //------------------------------------------------------------------
               //camera phons airpods

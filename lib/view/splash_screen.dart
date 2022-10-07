@@ -14,8 +14,8 @@ class _SplashScren extends State<SplashScren> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 5)).then((value) {
-      Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => ShopyApp()));
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const ShopyApp()));
     });
 
     super.initState();

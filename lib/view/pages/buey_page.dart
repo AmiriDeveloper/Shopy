@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shopy/model/internet_data.dart';
 
+// ignore: must_be_immutable
 class BuyPage extends StatelessWidget {
   BuyPage({Key? key, required this.product}) : super(key: key);
   final Shop product;

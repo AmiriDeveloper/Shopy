@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:shopy/model/basic_data.dart';
 import 'package:shopy/view/pages/search_page.dart';
 
 import '../../model/internet_data.dart';
