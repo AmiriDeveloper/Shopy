@@ -14,6 +14,8 @@ void main() {
   runApp(const MyApp());
 }
 
+final GlobalKey<ScaffoldState> _key = GlobalKey();
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -22,9 +24,10 @@ class MyApp extends StatelessWidget {
     // var text = Theme.of(context).textTheme;
 
     return const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: FavoriPage() // SplashScren() //ShopyApp(),
-        );
+      debugShowCheckedModeBanner: false,
+      home: //FavoriPage() // SplashScren()
+          ShopyApp(),
+    );
   }
 }
 
@@ -37,7 +40,7 @@ class ShopyApp extends StatelessWidget {
     // double bodyMargin = size.width / 1.1;
 
     return Scaffold(
-      drawer: BoxOfDrawer(size: size),
+      drawer: BoxOfDrawer(),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         //----------------------------------------------------------------------
@@ -46,7 +49,7 @@ class ShopyApp extends StatelessWidget {
           child: Column(
             children: [
               BoxOfAppBar(size: size),
-              const TitleApp(),
+              const TitleSecApp(),
               SizedBox(
                   height: size.height / 3,
                   width: double.infinity,
@@ -55,7 +58,7 @@ class ShopyApp extends StatelessWidget {
               //------------------------------------------------------------------
               //camera phons airpods
               CameraPhoneAirpodList(size: size),
-              const TitleApp2(),
+              const TitleSecApp(),
               SizedBox(
                 height: size.height / 4,
                 child: ListView.builder(
@@ -106,23 +109,24 @@ class ShopyApp extends StatelessWidget {
                   ),
                 ),
               ),
-              const TitleApp3(),
+              const TitleSecApp(),
+
               //------------------------------------------------------------------
               // phone brands
               const PhoneBrands(),
-              const TitleApp4(),
+              const TitleSecApp(),
               //-----------------------------------------------------------------
               // phone of the Week
-              const TitleApp5(),
+              const TitleSecApp(),
               const StiableContainer(image: "images/z-fold.webp"),
-              const TitleApp6(),
+              const TitleSecApp(),
               //------------------------------------------------------------------
               // TEC News
               const TecNews(),
               const SizedBox(height: 15),
-              const TitleApp7(),
+              const TitleSecApp(),
               const StiableContainer(image: "images/Samsung.jpg"),
-              const TitlApp8(),
+              const TitleSecApp(),
               //------------------------------------------------------------------
               //
               DigiKalaCard2(size: size),
