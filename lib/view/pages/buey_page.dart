@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shopy/controller/getx_controller.dart';
+import 'package:shopy/model/internet_data.dart';
 import 'package:shopy/model/internet_data.dart';
 
-// ignore: must_be_immutable
 class BuyPage extends StatelessWidget {
-  BuyPage({Key? key, required this.product}) : super(key: key);
-  final Shop product;
+  BuyPage({Key? key, this.produc}) : super(key: key);
+  final Product? produc;
+  final cardController = Get.put(CardController());
   double imageSize = 55;
 
   @override
@@ -31,7 +34,7 @@ class BuyPage extends StatelessWidget {
                         children: [
                           const Icon(Icons.chevron_right_sharp),
                           Text(
-                            product.model,
+                            produc!.model,
                             style: const TextStyle(
                                 backgroundColor: Colors.cyan, fontSize: 20),
                           ),
@@ -54,7 +57,7 @@ class BuyPage extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Colors.white,
                           image: DecorationImage(
-                              image: NetworkImage(product.imageUrl),
+                              image: NetworkImage(produc!.imageUrl),
                               fit: BoxFit.cover),
                           borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(30),
@@ -109,7 +112,7 @@ class BuyPage extends StatelessWidget {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     const Text("Memory"),
-                                    Text(product.memory),
+                                    Text(produc!.memory),
                                   ],
                                 ),
                               )),
@@ -129,7 +132,7 @@ class BuyPage extends StatelessWidget {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     const Text("Ram"),
-                                    Text(product.ram),
+                                    Text(produc!.ram),
                                   ],
                                 ),
                               )),
@@ -149,7 +152,7 @@ class BuyPage extends StatelessWidget {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     const Text("Pixel"),
-                                    Text(product.pixel),
+                                    Text(produc!.pixel),
                                   ],
                                 ),
                               )),
@@ -178,7 +181,7 @@ class BuyPage extends StatelessWidget {
                                   height: 12,
                                 ),
                                 Text(
-                                  "${product.price} \$",
+                                  "${produc!.price} \$",
                                   style: const TextStyle(
                                     fontSize: 35,
                                   ),
@@ -191,82 +194,11 @@ class BuyPage extends StatelessWidget {
                             child: Container(
                               width: 55,
                               height: 55,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                   shape: BoxShape.circle, color: Colors.white),
                               child: IconButton(
                                 onPressed: () {
-                                  showModalBottomSheet(
-                                      //   isScrollControlled: true,
-                                      shape: const RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.vertical(
-                                              top: Radius.circular(15))),
-                                      context: context,
-                                      builder: (context) => Row(
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: SizedBox(
-                                                  height: 300,
-                                                  width: 150,
-                                                  child: (
-                                                      //bug ------------
-                                                      Image.network(
-                                                    product.imageUrl,
-                                                    fit: BoxFit.fitHeight,
-                                                  )),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: SizedBox(
-                                                  height: 300,
-                                                  width: 170,
-                                                  child: Column(
-                                                    children: [
-                                                      const Spacer(),
-                                                      Text(
-                                                        product.model,
-                                                        style: const TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontSize: 20),
-                                                      ),
-                                                      Text(
-                                                        product.price,
-                                                        style: const TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontSize: 20),
-                                                      ),
-                                                      const Spacer(),
-                                                      const Text(
-                                                        "Samsung s22",
-                                                        style: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontSize: 20),
-                                                      ),
-                                                      const Spacer(),
-                                                      const Text(
-                                                        "Samsung s22",
-                                                        style: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontSize: 20),
-                                                      ),
-                                                      const Spacer(),
-                                                      ElevatedButton(
-                                                          onPressed: () {},
-                                                          child: const Text(
-                                                              "Buy Now"))
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ));
+                                  cardController.addProduct(produc!);
                                 },
                                 icon: const Icon(
                                   CupertinoIcons.right_chevron,

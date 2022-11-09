@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-//import 'package:carousel_pro/carousel_pro.dart';
 
 class Baince extends StatefulWidget {
   const Baince({Key? key}) : super(key: key);
@@ -52,11 +51,6 @@ class _BainceState extends State<Baince> {
             count: 6,
             effect: const WormEffect(),
           ),
-          SizedBox(
-            height: 100,
-            width: 100,
-            //  child: Car,
-          )
         ],
       ),
     );

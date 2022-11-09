@@ -103,7 +103,7 @@ class ListViewBuilder extends StatelessWidget {
 
   final int? itemIndex;
   final Size size;
-  final Shop? product;
+  final Product? product;
   final Function()? selictedIndex;
 
   @override
@@ -121,13 +121,14 @@ class ListViewBuilder extends StatelessWidget {
               // Navigator.of(context).push(
               // MaterialPageRoute(builder: (context) => const BeuyPage())),
               child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: const BorderRadius.all(Radius.circular(16)),
-                    image: DecorationImage(
+                decoration: const BoxDecoration(
+                  color: Colors.grey,
+                  borderRadius: BorderRadius.all(Radius.circular(16)),
+                  /*  image: DecorationImage(
                       image: NetworkImage(product!.imageUrl),
                       fit: BoxFit.cover,
-                    )),
+                    )*/
+                ),
               ),
             ),
           ),
@@ -140,6 +141,7 @@ class ListViewBuilder extends StatelessWidget {
     );
   }
 }
+
 // ignore: must_be_immutable
 class CameraPhoneAirpodList extends StatelessWidget {
   CameraPhoneAirpodList({

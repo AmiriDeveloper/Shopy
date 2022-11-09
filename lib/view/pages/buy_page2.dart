@@ -50,7 +50,7 @@ class _NewState extends State<New> {
                     children: [
                       const Icon(Icons.chevron_right_sharp),
                       Text(
-                        shoppingList[_pickedIndex].model,
+                        sho[_pickedIndex].model,
                         style: const TextStyle(
                             backgroundColor: Colors.cyan, fontSize: 20),
                       ),
@@ -63,8 +63,7 @@ class _NewState extends State<New> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image:
-                            NetworkImage(shoppingList[_pickedIndex].imageUrl),
+                        image: NetworkImage(sho[_pickedIndex].imageUrl),
                         fit: BoxFit.cover),
                     borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(30),
@@ -103,7 +102,7 @@ class _NewState extends State<New> {
                   //--------------  List View  builder -----------------//
                   child: ListView.builder(
                       scrollDirection: Axis.vertical,
-                      itemCount: shoppingList.length,
+                      itemCount: sho.length,
                       itemBuilder: ((context, index) {
                         return Column(
                           children: [
@@ -128,8 +127,8 @@ class _NewState extends State<New> {
                                           color: Colors.white, width: 2),
                                       borderRadius: BorderRadius.circular(16),
                                       image: DecorationImage(
-                                        image: NetworkImage(
-                                            shoppingList[index].imageUrl),
+                                        image:
+                                            NetworkImage(sho[index].imageUrl),
                                         fit: BoxFit.cover,
                                       )),
                                 ),
@@ -165,7 +164,7 @@ class _NewState extends State<New> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 const Text("Memory"),
-                                Text(shoppingList[_pickedIndex].memory),
+                                Text(sho[_pickedIndex].memory),
                               ],
                             ),
                           )),
@@ -184,7 +183,7 @@ class _NewState extends State<New> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 const Text("Ram"),
-                                Text(shoppingList[_pickedIndex].ram),
+                                Text(sho[_pickedIndex].ram),
                               ],
                             ),
                           )),
@@ -203,7 +202,7 @@ class _NewState extends State<New> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 const Text("Pixel"),
-                                Text(shoppingList[_pickedIndex].pixel),
+                                Text(sho[_pickedIndex].pixel),
                               ],
                             ),
                           )),
@@ -232,7 +231,7 @@ class _NewState extends State<New> {
                               height: 12,
                             ),
                             Text(
-                              "${shoppingList[_pickedIndex].price} \$",
+                              "${sho[_pickedIndex].price} \$",
                               style: const TextStyle(
                                 fontSize: 35,
                               ),

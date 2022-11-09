@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shopy/view/pages/search_page.dart';
@@ -116,7 +118,7 @@ class AllElectronicThings extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 30),
-                    child: Container(
+                    child: SizedBox(
                         height: 120,
                         width: 120,
                         // color: Colors.grey[300],

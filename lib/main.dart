@@ -7,6 +7,7 @@ import 'package:shopy/view/pages/favorit_page.dart';
 import 'package:shopy/view/splash_screen.dart';
 import 'package:shopy/view/stables/Stable_classes.dart';
 
+import 'card_screen.dart';
 import 'view/stables/stable_class.dart';
 import 'view/stables/my_stables.dart';
 
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
 
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: //FavoriPage() // SplashScren()
+      home: //CardScreen()
+          //FavoriPage() // SplashScren()
           ShopyApp(),
     );
   }
@@ -54,6 +56,28 @@ class ShopyApp extends StatelessWidget {
                   height: size.height / 3,
                   width: double.infinity,
                   child: const Baince()),
+              //this one its for moving pics aotumaticly
+              /*  Padding(
+                padding: const EdgeInsets.all(8.0),
+               child: SizedBox(
+                  height: 300,
+                  width: double.infinity,
+                  child: Carousel(
+                    images: const [
+                      NetworkImage(
+                          "https://previews.123rf.com/images/starlineart/starlineart1702/starlineart170200485/72033194-discount-voucher-and-banner-design-template-with-space-to-add-your-details.jpg"),
+                      NetworkImage(
+                          "https://i.pinimg.com/originals/80/14/a2/8014a2326ceabcaafd3bd127b81d7b7b.jpg"),
+                      NetworkImage(
+                          "https://static.vecteezy.com/system/resources/thumbnails/013/191/457/small/black-friday-sale-banner-design-design-background-for-media-promotion-and-social-media-post-with-copy-space-for-add-photo-product-vector.jpg"),
+                      NetworkImage(
+
+                          "https://isenselabs.com/img/uploads/instagram-youtube-banner_37873e1e65.png")
+                    ],
+                    animationDuration: Duration(milliseconds: 100),
+                  ),
+                ),
+              ),*/
               const SizedBox(height: 8),
               //------------------------------------------------------------------
               //camera phons airpods
@@ -63,19 +87,18 @@ class ShopyApp extends StatelessWidget {
                 height: size.height / 4,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: shoppingList.getRange(0, 7).length,
+                    itemCount: sho.getRange(0, 7).length,
                     itemBuilder: (context, index) {
                       return ListViewBuilder(
                           size: size,
                           itemIndex: index,
-                          product: shoppingList[index],
+                          product: sho[index],
                           selictedIndex: () {
                             //  Get.to(BuyPage(product: shoppingList[index]));
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>
-                                        BuyPage(product: shoppingList[index])));
+                                    builder: (context) => BuyPage()));
                           });
                     }),
               ),
@@ -94,17 +117,14 @@ class ShopyApp extends StatelessWidget {
                 height: size.height / 4,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: shoppingList.length,
+                  itemCount: sho.length,
                   itemBuilder: (context, index) => ListViewBuilder(
                     size: size,
                     itemIndex: index,
-                    product: shoppingList[index],
+                    product: sho[index],
                     selictedIndex: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  BuyPage(product: shoppingList[index])));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => BuyPage()));
                     },
                   ),
                 ),

@@ -1,4 +1,4 @@
-class Shop<int> {
+class Product {
   final int id;
   final String price;
   final String imageUrl;
@@ -7,18 +7,19 @@ class Shop<int> {
   final String memory;
   final String pixel;
 
-  Shop(
-      {required this.id,
-      required this.price,
-      required this.imageUrl,
-      required this.model,
-      required this.memory,
-      required this.pixel,
-      required this.ram});
+  Product({
+    required this.id,
+    required this.price,
+    required this.imageUrl,
+    required this.model,
+    required this.memory,
+    required this.pixel,
+    required this.ram,
+  });
 }
 
-List<Shop> shoppingList = [
-  Shop(
+List<Product> sho = [
+  Product(
     id: 1,
     imageUrl:
         "https://www.gottabemobile.com/samsung-galaxy-s10-news/galaxy-s10-3/",
@@ -28,7 +29,7 @@ List<Shop> shoppingList = [
     memory: "128",
     pixel: "48",
   ),
-  Shop(
+  Product(
     id: 8,
     imageUrl: "https://m.media-amazon.com/images/I/71oXhyGDd+L.jpg",
     price: "3100",
@@ -37,7 +38,7 @@ List<Shop> shoppingList = [
     memory: "500",
     pixel: "16",
   ),
-  Shop(
+  Product(
     id: 9,
     imageUrl:
         "https://www.androidauthority.com/wp-content/uploads/2022/02/Samsung-Galaxy-S22-Ultra-camera-module-close-up-angled.jpg",
@@ -47,7 +48,7 @@ List<Shop> shoppingList = [
     memory: "256",
     pixel: "48",
   ),
-  Shop(
+  Product(
     id: 10,
     imageUrl:
         "https://www.photographyblog.com/imager/entryimages/121124/canon_eos_r5_hands_on_july_9th_8c9cd6ffa9b02044a7a3327bc82c5649.jpg",
@@ -57,7 +58,7 @@ List<Shop> shoppingList = [
     memory: "0.0",
     pixel: "Full Hd",
   ),
-  Shop(
+  Product(
     id: 11,
     imageUrl:
         "https://www.androidauthority.com/wp-content/uploads/2021/05/Asus-Zenfone-8-Flip-10-scaled.jpg",
@@ -67,7 +68,7 @@ List<Shop> shoppingList = [
     memory: "256",
     pixel: "64-12",
   ),
-  Shop(
+  Product(
     id: 12,
     imageUrl:
         "https://cdn.vox-cdn.com/thumbor/c51CBlRJwSMyvgL2MnlRiE6w-e4=/0x0:3000x2000/1200x0/filters:focal(0x0:3000x2000):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/22790757/dseifert_4711_samsung_z_flip_3_5.jpg",
@@ -77,7 +78,7 @@ List<Shop> shoppingList = [
     memory: "256",
     pixel: "12-12",
   ),
-  Shop(
+  Product(
     id: 13,
     imageUrl:
         "https://media.wired.com/photos/61bb761477cdb999ac10fbab/3:2/w_1280%2Cc_limit/Gear-Oppo-Folding-Phone.jpg",
@@ -87,7 +88,7 @@ List<Shop> shoppingList = [
     memory: "256",
     pixel: "12-10",
   ),
-  Shop(
+  Product(
     id: 14,
     imageUrl: "https://xiaomi-mi.com/uploads/NewsItem/com__1622219110.jpg",
     price: "650",
@@ -96,7 +97,7 @@ List<Shop> shoppingList = [
     memory: "128",
     pixel: "48",
   ),
-  Shop(
+  Product(
     id: 2,
     imageUrl:
         "https://www.mytrendyphone.eu/images/Case-with-Ring-Holder-for-Huawei-P50-Pocket-Black-14012022-01-p.jpg",
@@ -106,7 +107,7 @@ List<Shop> shoppingList = [
     memory: "256",
     pixel: "64",
   ),
-  Shop(
+  Product(
     id: 3,
     imageUrl:
         "https://cdn.pocket-lint.com/r/s/320x/assets/images/120810-phones-news-buyer-s-guide-upcoming-smartphones-image82-xtmzmj34ai.jpg?v1",
@@ -116,7 +117,7 @@ List<Shop> shoppingList = [
     memory: "128",
     pixel: "48",
   ),
-  Shop(
+  Product(
     id: 4,
     imageUrl:
         "https://target.scene7.com/is/image/Target/GUEST_18158d75-e421-4bc4-98cf-2d2a00533a0b",
@@ -126,7 +127,7 @@ List<Shop> shoppingList = [
     memory: "0",
     pixel: "0",
   ),
-  Shop(
+  Product(
     id: 5,
     imageUrl:
         "https://www.thebackmarket.nl/cdn-cgi/image/format=auto,quality=75,width=640/https://d1eh9yux7w8iql.cloudfront.net/product_images/397533_6412a537-4f4d-42e6-a4c5-64a37169a139.jpg",
@@ -136,7 +137,7 @@ List<Shop> shoppingList = [
     memory: "500",
     pixel: "64",
   ),
-  Shop(
+  Product(
     id: 6,
     imageUrl: "https://cdn.mos.cms.futurecdn.net/gxyWHWHtEMUoKCv5RFMMoi.jpg",
     price: "1670",
@@ -145,7 +146,7 @@ List<Shop> shoppingList = [
     memory: "500",
     pixel: "24",
   ),
-  Shop(
+  Product(
     id: 7,
     imageUrl:
         "https://www.notebookcheck.nl/uploads/tx_nbc2/XiaomiRedmiNote11Pro.JPG",
@@ -155,7 +156,7 @@ List<Shop> shoppingList = [
     memory: "256",
     pixel: "48",
   ),
-  Shop(
+  Product(
     id: 15,
     imageUrl:
         "https://camerajabber.com/wp-content/uploads/2020/02/Nikon_D6__DSC1547-1410x793.jpg",
@@ -165,7 +166,7 @@ List<Shop> shoppingList = [
     memory: "0.0",
     pixel: "Quek HD",
   ),
-  Shop(
+  Product(
     id: 16,
     imageUrl:
         "https://staticimg.titan.co.in/Fastrack/Catalog/FO2GRA02_1.jpg?pView=pdp",
@@ -175,7 +176,7 @@ List<Shop> shoppingList = [
     memory: "0.0",
     pixel: "0.0",
   ),
-  Shop(
+  Product(
     id: 17,
     imageUrl:
         "https://www.sony.co.uk/image/0db517b7884d87c665c1ca403bc22ce2?fmt=pjpeg&bgcolor=FFFFFF&bgc=FFFFFF&wid=2515&hei=1320",
