@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shopy/controller/getx_controller.dart';
 import 'package:shopy/model/internet_data.dart';
 import 'package:shopy/view/baince.dart';
 import 'package:shopy/view/pages/buey_page.dart';
@@ -24,9 +26,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // var text = Theme.of(context).textTheme;
 
-    return const MaterialApp(
+    return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: //CardScreen()
+
           //FavoriPage() // SplashScren()
           ShopyApp(),
     );
@@ -50,6 +53,8 @@ class ShopyApp extends StatelessWidget {
         child: Scrollbar(
           child: Column(
             children: [
+              // Box of AppBar its the appBAR that have icons
+              // & Menu Button to open Drawer
               BoxOfAppBar(size: size),
               const TitleSecApp(),
               SizedBox(
