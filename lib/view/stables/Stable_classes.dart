@@ -2,6 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:shopy/card_screen.dart';
+import 'package:shopy/controller/getx_controller.dart';
 import 'package:shopy/view/pages/search_page.dart';
 
 import '../../model/internet_data.dart';
@@ -265,7 +268,12 @@ class BoxOfAppBar extends StatelessWidget {
                       color: Colors.white,
                     )),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // Get.to(CardScreen());
+                       Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => CardScreen()));
+                      //   Get.lazyPut(() => CardController());
+                    },
                     icon: const Icon(
                       Icons.shopping_cart,
                       color: Colors.white,

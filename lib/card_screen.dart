@@ -5,26 +5,27 @@ import 'package:shopy/model/internet_data.dart';
 
 class CardScreen extends StatelessWidget {
   final CardController controller = Get.find();
-
+  
   CardScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[100],
-        body: SizedBox(
-            width: double.infinity,
-            child: ListView.builder(
-                scrollDirection: Axis.vertical,
-                itemCount: controller.products.lenght,
-                itemBuilder: (context, int index) {
-                  return CartProducCard(
-                    controll: controller,
-                    product: controller.products.key.toList()[index],
-                    quantity: controller.products.values.toList()[index],
-                    index: index,
-                  );
-                })));
+      backgroundColor: Colors.grey[100],
+      body: SizedBox(
+          width: double.infinity,
+          child: ListView.builder(
+              scrollDirection: Axis.vertical,
+              itemCount: controller.products.lenght,
+              itemBuilder: (context, int index) {
+                return CartProducCard(
+                  controll: controller,
+                  product: controller.products.key.toList()[index],
+                  quantity: controller.products.values.toList()[index],
+                  index: index,
+                );
+              })),
+    );
   }
 }
 
@@ -83,12 +84,19 @@ class CartProducCard extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Icon(
-                        Icons.delete,
-                        color: Colors.red,
+                      IconButton(
+                        onPressed: () {
+                          controll.removeProduct(product);
+                        },
+                        icon: const Icon(
+                          Icons.delete,
+                          color: Colors.red,
+                        ),
                       ),
-                      Text("1"),
-                      Icon(Icons.add),
+                      Text("$quantity"),
+                      IconButton(
+                          onPressed: (() => controll.addProduct(product)),
+                          icon: const Icon(Icons.add)),
                     ],
                   ),
                 )
