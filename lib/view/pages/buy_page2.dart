@@ -1,23 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shopy/controller/getx_controller.dart';
 import 'package:shopy/main.dart';
 import 'package:shopy/model/internet_data.dart';
 
-void main() {
-  runApp(const BuyPage2());
-}
-
-class BuyPage2 extends StatelessWidget {
-  const BuyPage2({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(debugShowCheckedModeBanner: false, home: New());
-  }
-}
-
 class New extends StatefulWidget {
-  const New({
+  final CardController controller = Get.put(CardController());
+   New({
     Key? key,
   }) : super(key: key);
 
