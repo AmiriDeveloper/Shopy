@@ -7,17 +7,7 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 237, 237, 237),
-      appBar: AppBar(
-          title: Row(children: [
-            IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: const Icon(Icons.arrow_back)),
-            Expanded(child: Container()),
-          ]),
-          backgroundColor: Colors.deepPurpleAccent,
-          elevation: 0),
+      appBar: AppBar(backgroundColor: Colors.deepPurpleAccent, elevation: 0),
       body: Container(
         color: Colors.deepPurpleAccent,
         height: 50,

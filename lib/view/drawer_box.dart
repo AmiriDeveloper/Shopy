@@ -3,6 +3,8 @@ import 'package:shopy/view/stables/Stable_classes.dart';
 import 'package:get/get.dart';
 
 class BoxOfDrawer extends StatelessWidget {
+  const BoxOfDrawer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -20,12 +22,13 @@ class BoxOfDrawer extends StatelessWidget {
               ),
             ),
             decoration: const BoxDecoration(
-                color: Colors.blueAccent,
-                image: DecorationImage(
-                    image: NetworkImage(
-                      "https://img.freepik.com/free-photo/red-black-brush-stroke-banner-background-perfect-canva_1361-3597.jpg?w=2000",
-                    ),
-                    fit: BoxFit.cover),),
+              color: Colors.blueAccent,
+              image: DecorationImage(
+                  image: NetworkImage(
+                    "https://img.freepik.com/free-photo/red-black-brush-stroke-banner-background-perfect-canva_1361-3597.jpg?w=2000",
+                  ),
+                  fit: BoxFit.cover),
+            ),
           ),
           Container(
             padding: EdgeInsets.zero,

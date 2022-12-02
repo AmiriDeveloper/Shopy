@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:shopy/card_screen.dart';
-import 'package:shopy/controller/getx_controller.dart';
+import 'package:shopy/view/pages/log_sign_in.dart';
 import 'package:shopy/view/pages/search_page.dart';
 
 import '../../model/internet_data.dart';
@@ -209,7 +209,6 @@ class Div extends StatelessWidget {
 
 // this key for the drawer without it the drawer cant open
 // and i gona have a bug.
-final GlobalKey<ScaffoldState> _key = GlobalKey();
 
 class BoxOfAppBar extends StatelessWidget {
   const BoxOfAppBar({
@@ -244,7 +243,7 @@ class BoxOfAppBar extends StatelessWidget {
               children: [
                 IconButton(
                     onPressed: () {
-                      _key.currentState!.openDrawer();
+                      Scaffold.of(context).openDrawer();
                     },
                     icon: const Icon(
                       Icons.menu,
@@ -262,18 +261,25 @@ class BoxOfAppBar extends StatelessWidget {
                 ),
                 Expanded(child: Container()),
                 IconButton(
+                    onPressed: () {
+                      Get.to(LogSignIn());
+                    },
+                    icon: const Icon(
+                      Icons.login_outlined,
+                      color: Colors.white,
+                    )),
+                IconButton(
                     onPressed: () {},
                     icon: const Icon(
                       Icons.favorite,
                       color: Colors.white,
                     )),
                 IconButton(
-                    onPressed: () {
-                      // Get.to(CardScreen());
-                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => CardScreen()));
-                      //   Get.lazyPut(() => CardController());
-                    },
+                    onPressed: () => Get.to(CardScreen())
+                    //  Navigator.of(context).push(MaterialPageRoute(
+                    //      builder: (context) => CardScreen()));
+                    //   Get.lazyPut(() => CardController());
+                    ,
                     icon: const Icon(
                       Icons.shopping_cart,
                       color: Colors.white,
@@ -289,21 +295,29 @@ class BoxOfAppBar extends StatelessWidget {
           child: Material(
             elevation: 4,
             borderRadius: BorderRadius.circular(20),
-            child: TextField(
-              textAlign: TextAlign.center,
-              decoration: InputDecoration(
-                  suffixIcon: IconButton(
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const SearchPage()));
-                      },
-                      icon: const Icon(Icons.safety_check)),
-                  hintText: 'search',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide.none),
-                  filled: true,
-                  fillColor: Colors.white),
+            child: GestureDetector(
+              onTap: () => Get.to(const SearchPage()),
+              child: Container(
+                height: size.height / 9 - 20,
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(18))),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      "click her to search",
+                      style: TextStyle(
+                          color: Colors.grey[400], fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(width: Get.width / 2),
+                    Icon(
+                      Icons.search,
+                      color: Colors.grey[400],
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
         )

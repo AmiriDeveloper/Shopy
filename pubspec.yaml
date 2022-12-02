@@ -24,6 +24,8 @@ dependencies:
   flutter_spinkit: ^5.1.0
   smooth_page_indicator: ^1.0.0+2
   carousel_pro: ^1.0.0
+  firebase_auth: ^4.1.5
+  firebase_core: ^2.3.0
 
 dev_dependencies:
   flutter_test:
@@ -58,6 +60,7 @@ flutter:
     - images/logo-social.png
     - images/tec.png
     - images/girl.png
+    - images/stay-home.png
   
 
   

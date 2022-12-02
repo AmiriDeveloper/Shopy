@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "907686975876",
+    "project_id": "shopy-amiri",
+    "storage_bucket": "shopy-amiri.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907686975876:android:65d546bcd699e5ff6f25d1",
+        "android_client_info": {
+          "package_name": "com.shopyamiri.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907686975876-bi4ld8s7ptk75kjvr67iie8h4u2fai0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk8LpSIZso1qTqR0PXDeYNOLYJrOXh1gA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907686975876-bi4ld8s7ptk75kjvr67iie8h4u2fai0k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

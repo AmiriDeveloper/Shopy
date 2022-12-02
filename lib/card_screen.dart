@@ -5,7 +5,7 @@ import 'package:shopy/model/internet_data.dart';
 
 class CardScreen extends StatelessWidget {
   final CardController controller = Get.find();
-  
+
   CardScreen({Key? key}) : super(key: key);
 
   @override
@@ -54,18 +54,18 @@ class CartProducCard extends StatelessWidget {
           children: [
             Column(
               children: [
-                Text("data"),
+                const Text("data"),
                 Row(
-                  children: [Text("data"), Icon(Icons.abc)],
+                  children: const [Text("data"), Icon(Icons.abc)],
                 ),
                 Row(
-                  children: [Text("data"), Icon(Icons.abc)],
+                  children: const [Text("data"), Icon(Icons.abc)],
                 ),
                 Row(
-                  children: [Text("data"), Icon(Icons.abc)],
+                  children: const [Text("data"), Icon(Icons.abc)],
                 ),
                 Row(
-                  children: [Text("data"), Icon(Icons.abc)],
+                  children: const [Text("data"), Icon(Icons.abc)],
                 ),
               ],
             ),
@@ -78,7 +78,7 @@ class CartProducCard extends StatelessWidget {
                   height: 50,
                   width: 100,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                    borderRadius: const BorderRadius.all(Radius.circular(15)),
                     border: Border.all(color: Colors.grey, width: 1),
                   ),
                   child: Row(

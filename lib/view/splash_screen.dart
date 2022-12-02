@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:shopy/desktop_scaffold.dart';
 import 'package:shopy/main.dart';
 import 'package:shopy/model/theme_data.dart';
+
+import '../mobile_scaffold.dart';
+import '../tablet_scafflod.dart';
 
 class SplashScren extends StatefulWidget {
   const SplashScren({Key? key}) : super(key: key);
@@ -14,8 +18,12 @@ class _SplashScren extends State<SplashScren> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 5)).then((value) {
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const ShopyApp()));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (context) => const ResposiveLayout(
+                desktopScaffold: DesktopScaffold(),
+                mobileScaffold: TabletScaffold(),
+                tabletScaffold: MobileScaffold(),
+              )));
     });
 
     super.initState();

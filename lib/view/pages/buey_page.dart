@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shopy/controller/getx_controller.dart';
 import 'package:shopy/model/internet_data.dart';
-import 'package:shopy/model/internet_data.dart';
 
 class BuyPage extends StatelessWidget {
   BuyPage({Key? key, this.produc}) : super(key: key);
@@ -194,7 +193,7 @@ class BuyPage extends StatelessWidget {
                             child: Container(
                               width: 55,
                               height: 55,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                   shape: BoxShape.circle, color: Colors.white),
                               child: IconButton(
                                 onPressed: () {
