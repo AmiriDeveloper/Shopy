@@ -60,9 +60,12 @@ flutter:
     - images/logo-social.png
     - images/tec.png
     - images/girl.png
-    - images/stay-home.png
-  
 
+    - images/big-sale.png
+    - images/shopping.png
+    - images/shopping (1).png
+    - images/shopping (2).png
+    - images/stay-home.png
   
   # example:
  # fonts:
