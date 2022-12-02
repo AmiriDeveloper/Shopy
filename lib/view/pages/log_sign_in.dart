@@ -1,14 +1,22 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:shopy/mobile_scaffold.dart';
 
-class LogSignIn extends StatelessWidget {
+class LogSignIn extends StatefulWidget {
   LogSignIn({super.key});
+
+  @override
+  State<LogSignIn> createState() => _LogSignInState();
+}
+
+class _LogSignInState extends State<LogSignIn> {
   final formKey = GlobalKey<FormState>();
+
 // use this controller to get what the user type
   final _emailController = TextEditingController();
+
   final _passwordController = TextEditingController();
+
   final _numController = TextEditingController();
 
   Future signIn() async {
@@ -23,7 +31,7 @@ class LogSignIn extends StatelessWidget {
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
-    //  super.dispose();
+    super.dispose();
   }
 
   @override
@@ -76,7 +84,7 @@ class LogSignIn extends StatelessWidget {
                 filled: true,
                 fillColor: Colors.white,
                 enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: const BorderSide(color: Colors.white),
                     borderRadius: BorderRadius.circular(12)),
                 focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),

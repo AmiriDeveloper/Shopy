@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shopy/view/baince.dart';
 import 'package:shopy/view/drawer_box.dart';
 import 'package:shopy/view/pages/buey_page.dart';
@@ -131,6 +132,60 @@ class MobileScaffold extends StatelessWidget {
               ShareWidget(size: size),
 
               const SizedBox(height: 10),
+              const StiableContainer(image: "images/Samsung.jpg"),
+              const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: Get.height / 1 - 50,
+                  width: double.infinity,
+                  color: Colors.deepPurple,
+                  child: Column(
+                    children: [
+                      Row(
+                        //  crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.asset("images/shopping.png", scale: 4),
+                          Image.asset("images/shopping (1).png", scale: 4),
+                        ],
+                      ),
+                      Row(
+                        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Image.asset(
+                            "images/shopping (2).png",
+                          ),
+                          Image.asset("images/stay-home.png", scale: 4),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 150,
+                          decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(12),
+                                  topRight: Radius.circular(12))),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 150,
+                          decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(12),
+                                  bottomRight: Radius.circular(12))),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),
