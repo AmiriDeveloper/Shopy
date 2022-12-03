@@ -145,16 +145,16 @@ class MobileScaffold extends StatelessWidget {
                       Row(
                         //  crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image.asset("images/shopping.png", scale: 4),
-                          Image.asset("images/shopping (1).png", scale: 4),
+                          //   Image.asset("images/shopping.png", scale: 4),
+                          //5   Image.asset("images/shopping (1).png", scale: 4),
                         ],
                       ),
                       Row(
                         // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Image.asset(
-                            "images/shopping (2).png",
-                          ),
+                          //   Image.asset(
+                          //   "images/shopping (2).png",
+                          //  ),
                           Image.asset("images/stay-home.png", scale: 4),
                         ],
                       ),
